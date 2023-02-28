@@ -11,34 +11,73 @@
 
     </head>
     <body>
+        <div class="popup_wrapper"></div>
+        <!--Всплывающее окно-->
+        <div class="pop_up">
+            <div class="stories_text my_account"><h2>Log in to your account</h2></div>
+            <div class="stories_text new_account"><h2>Create account</h2></div>
+
+            <div class="sign_account my_account">
+                <img class="sign_icon" src="img/sign-icon-facebook.png"  alt="facebook">
+                <p>Sign In with Facebook</p>
+            </div>
+            <div class="sign_account my_account">
+                <img  class="sign_icon" src="img/sign-icon-google.png"  alt="google">
+                <p>Sign In with Google</p>
+            </div>
+
+            <div class="line my_account"><img class="divide" src="img/OR.png"></div>
+            <form id="form" action="#" method="post" enctype="multipart/form-data">
+                <div>
+                    <label class="clue">E-mail</label>
+                    <input class="area" type="text" tabindex="1" name="mail" placeholder="  e-mail" value="">
+                </div>
+                <div>
+                    <label class="clue">Password</label>
+                    <input class="area" type="password" tabindex="2" name="password" placeholder="  password" value="">
+                </div>
+                <button class="my_account" type="submit">Sign In</button>
+                <button class="new_account" type="submit" >Sign Up</button>
+            </form>
+            <div class="text my_account">Forgot Your Password?</div>
+
+            <div class="line"><img class="divide" src="img/Line 2.png"></div>
+
+            <div class="my_account">
+                <p class="clue grey">Don’t have an account? <span class="text register">Register</span></p>
+            </div>
+            <div class="new_account">
+                <p class="clue grey">Already have an account? <span class=" text register" id="LogIn">Log In</span></p>
+            </div>
+        </div>
+
         <div class="wrapper">
             
             <!--блок с картинкой. Состоит из навигации и превью-->
             <div class="top">
-                <header class="desktop">
+                <header>
 
                     <div class="logo">
                         <div class="desktop"><img src="img/logo.png" height="31px" width="216px" ></div>
                     </div>
-
-                    <div class="nav desktop">
+                    <div class="close_bottom mobile" id="close_bottom"><!--<img src="img/clarity_window-close-line.png" width="50" height="50" --></div>
+                    <div class="nav">
                         <div class="nav_item">How It Works</div>
                         <div class="nav_item">Plan Your Trip</div>
                         <div class="nav_item">Destinations </div>
                         <div class="nav_item">Travel Stories</div>
+                        <div class="nav_item mobile open_login">Account</div>
+                        <div class="nav_item mobile">Social Media</div>
                     </div>
 
-                    <div class="login desktop">
+                    <div class="login desktop open_login">
                         <div>Login</div>
                     </div>
-
-                    
-                
                 </header>
 
                 <div class="logo_mobile">
-                    <div class="mobile"><img src="img/logo_phone.png" height="35" width="35"></div>
-                    <div class="mobile"><img src="img/burger.png" width="35" height="35"></div>
+                    <div class="mobile" id="fly_bottom"></div>
+                    <div class="mobile" id="open_bottom"></div>
                 </div>
 
                 <section class="preview">
@@ -57,37 +96,48 @@
             </div>
         
             
-           <!-- <main>
+            <main>
                 <section class="steps">
                     <div class="content_title">3 STEPS TO THE PERFECT TRIP</div>
                     <div class="steps_wrapper">
-                        <div class="steps_items">
-                            <div class="steps_icon"><img src="img/icon_1.png" alt="icon"></div>
+                        <div class="steps_items" id="step_1">
+                            <div class="steps_icon"><img class="icon" src="img/icon_1.png" alt="icon"></div>
                             <div class="steps_text">Tell us what you want to do</div>
                         </div>
                         <div class="steps_items" id="step_2">
-                            <div class="steps_icon"><img src="img/icon_2.png" alt="icon"></div>
+                            <div class="steps_icon"><img class="icon" src="img/icon_2.png" alt="icon"></div>
                             <div class="steps_text">Share us preferable dates </div>
                         </div>
-                        <div class="steps_items">
-                            <div class="steps_icon"><img src="img/icon_3.png" alt="icon"></div>
+                        <div class="steps_items" id="step_3">
+                            <div class="steps_icon"><img class="icon" src="img/icon_3.png" alt="icon"></div>
                             <div class="steps_text">We will give you recommendations</div>
                         </div>
-                    </div>
-                    
+                    </div>     
                 </section>
                 <section class="destinations">
                     <div class="content_title">POPULAR DESTINATIONS</div>
                     <div class="slider">
-                        <div class="slider_item" id="item_1">NORWAY</div>
-                        <div class="slider_item" id="item_2">JAPAN</div>
-                        <div class="slider_item" id="item_3">USA</div>
+                        <div class="slider_content">
+                            <div class="slider_item" id="item_1">SPAIN</div>
+                            <div class="slider_item" id="item_2">JAPAN</div>
+                            <div class="slider_item" id="item_3">USA</div>
+                        </div>
+                        <div class="slider_control">
+                            <div id="arrow_left" class="mobile" ><img class="vector" src="img/Vector.png"></div>
+
+                            <div class="slider_points">
+                                <div class="red_point"></div>
+                                <div class="red_point"></div>
+                                <div class="red_point"></div>
+                            </div>
+
+                            <div id="arrow_right" class="mobile"><img class="vector" src="img/Vector.png"></div>
+
+                           
+
+                        </div>
                     </div>
-                    <div class="point">
-                        <div class="red_point"></div>
-                        <div class="red_point"></div>
-                        <div class="red_point"></div>
-                    </div>
+                    
 
                 </section>
 
@@ -149,18 +199,25 @@
                     </section>
                     <footer>
                         <div class="sign">
-                            <p class="sign_text">All Rights Reserved © Travel Portal</p>
+                            <p class="sign_text desktop">All Rights Reserved © Travel Portal</p>
                         </div>
                         <div class="social">
-                            <div class="social_item"><img src="img/instagram.png" alt="instagram" width="33px" height="33px"></div>
-                            <div class="social_item"><img src="img/youtube.png" alt="youtube" width="33px" height="33px"></div>
-                            <div class="social_item"><img src="img/twitter.png" alt="twitter" width="33px" height="33px"></div>
+                            <div class="social_item" id="instagram"></div>
+                            <div class="social_item" id="youtube"></div>
+                            <div class="social_item" id="twitter"></div>
                         </div>
                     </footer>
-                </div>
+                </div> 
             </main>
-        -->
         </div>
+
+        <script src="js/slider.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/login_button.js"></script>
+        <script src="js/checkbox.js"></script>
+        
+        
+       
     </body>
 </html>
 
